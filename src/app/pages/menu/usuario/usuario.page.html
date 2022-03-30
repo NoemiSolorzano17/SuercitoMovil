@@ -1,14 +1,19 @@
-<ion-header  class="ion-no-border">
-  <ion-toolbar color="warning" >
-    <ion-title  color="danger" class="ion-text-center"x>Registro de usuario</ion-title>
+<!-- <ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+    <ion-button  routerLink="/login"> 
+      <ion-icon slot="icon-only" color="youtube" name="person-circle-outline" ></ion-icon>
+    </ion-button>
+  </ion-buttons>
+    
+    <ion-title >Registro de usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <br>
-  <br>
   
-  <img src="/assets/SUPERCITO.png"  class="icon"  >
+  <img src="/assets/SUPERCITO.png"  class="center"  >
   <br>
   <form [formGroup]="user"  (ngSubmit)="registroUsuario()" novalidate >
     <ion-list>
@@ -18,7 +23,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating" >Correo electrónico:</ion-label>
-      <ion-input type="number" formControlName="email" placeholder=""></ion-input>
+      <ion-input type="email" formControlName="email" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" >Cedula:</ion-label>
@@ -49,4 +54,4 @@
     <ion-button expand="full" color="warning" type="submit" shape="round" [disabled]="!user.valid">Registrar</ion-button>
   </ion-list>
 </form>
-</ion-content>
+</ion-content> -->

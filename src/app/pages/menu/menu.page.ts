@@ -17,15 +17,29 @@ export class MenuPage implements OnInit {
     
     {
       title: 'Ubicación',
-      url: 'ubicacion',
+      url: '/menu/ubicacion',
       icon: 'map'
     },
     
     {
       title: 'Producto',
-      url: 'producto',
+      url: '/menu/producto',
       icon: 'card'
     },
+    {
+      title: 'Promociones',
+      url: '/menu/promocion',
+      icon: 'pricetags'
+    }
+    ,{
+      title: 'vista',
+      url: '/menu/vista-producto/product',
+      icon: 'card'
+    }, {
+      title: 'Carrito',
+      url: '/menu/carrito',
+      icon: 'cart'
+    }
     
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

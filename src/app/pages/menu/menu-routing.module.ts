@@ -24,12 +24,16 @@ const routes: Routes = [
       },{
         path: 'vista-producto',
         loadChildren: () => import('./vista-producto/vista-producto.module').then( m => m.VistaProductoPageModule)
+      },{
+        path: 'promocion',
+        loadChildren: () => import('./promocion/promocion.module').then( m => m.PromocionPageModule)
       }
 
       
       ]
 
   }
+  
 
 ];
 

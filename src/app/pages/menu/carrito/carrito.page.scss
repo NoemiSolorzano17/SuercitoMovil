@@ -1,0 +1,43 @@
+.text1{
+    padding-left: 15px;
+    margin-top: 4px;
+    font-size: small;
+  }
+  label {
+    margin: 1em auto;
+  }
+  .img{
+ 
+    width: 80px;
+    height: 80px;
+    }
+    .text{
+
+        font-weight: bold;
+        text-transform: capitalize;
+        text-transform: none;
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 6px;
+        display: table-cell;
+        padding-left: 10px;
+      
+       
+      }
+      .boton {
+        margin-left: 0px;
+        text-transform: none;
+        font-size: small;
+        
+              
+        }
+        .negativo {
+          color: red;
+        }
+        .positivo {
+          color: rgb(104, 214, 54);
+        }
+        .icongrande {
+      font-size: 150%;
+      color: greenyellow;
+      }

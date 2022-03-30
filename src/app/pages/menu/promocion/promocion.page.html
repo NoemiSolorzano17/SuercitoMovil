@@ -1,0 +1,48 @@
+
+<ion-header class="ion-no-border" >
+  <ion-toolbar >
+    <ion-menu-button slot="start"></ion-menu-button>
+    <img src="/assets/SUPERCITO.png" class="icon1" >
+    <ion-buttons slot="end">
+      <ion-button (click) ="rutadelcarrito()" > 
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons> 
+    
+  </ion-toolbar>
+  <ion-searchbar placeholder="Promociones" animated style="padding-top: 0px;" mode="ios" ></ion-searchbar>
+</ion-header>
+<ion-content >
+ <ion-card  (click)="expandItem(item)" *ngFor="let item of  promociones">
+  <ion-card-header >
+    <ion-card-title ><h5 > {{item.descripcion}}</h5> 
+     </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+<app-promociones-com  expandHeight="200%" [expanded]="item.expanded">
+ <div class="container">
+    <ion-list >
+     
+      <ion-item  *ngFor="let  item1 of item.registro2 ">
+        <ion-label (click)="abrirModal(item1)">
+            <h3 class="text" ><b>{{item1.descripcion}}</b></h3> 
+            <p class="preciotex">Fecha:{{item1.fecha_inicio}}</p>
+            <p class="preciotex">Precio: {{item1.PrecioPromocionConDescuento |currency:"USD":true}}  <s style="margin-left: 6px;" >{{ item1.PrecioSinDescuento|number|currency:"USD":true}}</s></p> 
+        </ion-label>
+        <br>
+        <ion-buttons>
+          <ion-button  (click)="verificarExistePromociones(item1)"  class="boton" > 
+            <ion-icon  slot="end" name="cart-outline"></ion-icon> 
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+     
+    </ion-list>
+  </div>
+
+</app-promociones-com>
+</ion-card-content>
+</ion-card> 
+</ion-content>
+

@@ -1,41 +1,52 @@
 
-<ion-header class="ion-no-border" translucent>
-  <ion-toolbar class="tool" >
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-text-capitalize"></ion-title>
-    <br>
-    <img src="/assets/SUPERCITO.png"   class="icon1" >
-    <!-- <form action=""slot="end" >
-      <input type="search" name="nombre" placeholder="Buscar">
-  </form> -->
-  </ion-toolbar>
-</ion-header> 
 
-<ion-content class="ion-padding">
-  <ion-list>
-  <ion-item *ngFor="let  item of producto ">
+<ion-header class="ion-no-border" >
+ 
+    <ion-toolbar >
+      <ion-menu-button  slot="start"></ion-menu-button>
+      <img src="/assets/SUPERCITO.png" class="icon1" >
+      <ion-buttons slot="end">
+        <ion-button (click) ="rutadelcarrito()" > 
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon> 
+        </ion-button>
+      </ion-buttons> 
+  
+      
+    </ion-toolbar>
+    <ion-searchbar placeholder="Productos"   (ionChange)="buscar( $event )"animated style="padding-top: 0px;" mode="ios" ></ion-searchbar>
+  
+</ion-header>
+
+<ion-content class="ion-padding ">
+  <div class="container">
+  <p *ngIf="iconoCargando" class="spinners"><ion-spinner color="primary" name="circles"></ion-spinner></p>
+  <ion-list >
+  <ion-item *ngFor="let  item of producto |filtro: textoBuscar:'NAME' ">
     <img  src="/assets/fruta.jpg" class="img">
     <ion-label>
-      <h3 class="text">{{item.NAME}}</h3>
-      <p class="text1" *ngIf=" item.promocionesdel_producto.length===0">{{ item.PRICE | currency:"USD":true}}</p>
-      <p class="text" *ngIf=" item.promocionesdel_producto.length===0">{{item.stock}}</p>
-      <div  *ngIf=" item.promocionesdel_producto.length>0" >
-        <div *ngFor="let  item1 of item.promocionesdel_producto ">
-          <p class="text1" >{{ ((item1.descuento)/100 *item.PRICE) | currency:"USD":true}}     <s style="font-size: x-small;">{{ item.PRICE | currency:"USD":true}}</s></p> 
-          <p class="text"  >{{item1.stock}}</p>
-        
-        </div>  
+      <h3 class="text" lines="full">{{item.NAME}}</h3>
+      <p class="text1" *ngIf=" item.promocionesdel_producto == null">Precio: {{ item.PRICE | currency:"USD":true}}</p>
+      <p class="text1" *ngIf=" item.promocionesdel_producto == null">Cantidad: {{item.stock}}</p>
+      <div  *ngIf=" item.promocionesdel_producto != null" >
+          <p class="text1" >Precio: {{ ((item.promocionesdel_producto.descuento)/100 *item.PRICE) | currency:"USD":true}}     <s style="font-size: x-small;">{{ item.PRICE | currency:"USD":true}}</s></p> 
+          <p class="text1"  > Cantidad: {{item.promocionesdel_producto.stock}}</p>
       </div>
       <ion-buttons>
-        <ion-button  class="boton" > 
-          <ion-icon  slot="start" name="cart-outline"></ion-icon> Agregar
+        <ion-button (click)="verificarExiste(item)"  class="boton" > 
+          <ion-icon slot="start" name="cart-outline"></ion-icon> Agregar
         </ion-button>
       </ion-buttons> 
     </ion-label>
+    
   </ion-item>
 </ion-list>
+</div>
+<ion-infinite-scroll threshold="150px" (ionInfinite)="cargarproducto($event)">
+  <ion-infinite-scroll-content  color="primary"
+    loadingSpinner="lines"
+    loadingText="Cargando...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
 </ion-content>
 
 

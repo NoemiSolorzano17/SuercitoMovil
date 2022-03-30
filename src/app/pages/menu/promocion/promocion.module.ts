@@ -4,27 +4,27 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProductoPageRoutingModule } from './producto-routing.module';
+import { PromocionPageRoutingModule } from './promocion-routing.module';
 
-import { ProductoPage } from './producto.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { PromocionPage } from './promocion.page';
+import {  ComponentsModule} from '../../../components/components.module';
 import { ModalPromocionesPage } from '../modal-promociones/modal-promociones.page';
 import { ModalPromocionesPageModule } from '../modal-promociones/modal-promociones.module';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   entryComponents:[
-ModalPromocionesPage
-  ],
+    ModalPromocionesPage
+      ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductoPageRoutingModule,
+    PromocionPageRoutingModule,
     ComponentsModule,
     ModalPromocionesPageModule,
     PipesModule
   ],
-  declarations: [ProductoPage]
+  declarations: [PromocionPage]
 })
-export class ProductoPageModule {}
+export class PromocionPageModule {}

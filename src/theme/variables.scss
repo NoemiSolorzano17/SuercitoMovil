@@ -2,8 +2,10 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 :root {
   /** primary **/
+  --ion-font-family: 'Poppins', sans-serif;
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
@@ -74,6 +76,21 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+    /**youtube**/
+  --ion-color-youtube: #74ff38;
+  --ion-color-youtube-rgb: 116,255,56;
+  --ion-color-youtube-contrast: #000000;
+  --ion-color-youtube-contrast-rgb:0,0,0;
+  --ion-color-youtube-shade:#66e031;
+  --ion-color-youtube-tint: #82ff4c;
+}
+.ion-color-youtube{
+  --ion-color-base: var(--ion-color-youtube) !important;
+  --ion-color-base-rgb: var(--ion-color-youtube-rgb) !important;
+  --ion-color-contrast: var(--ion-color-youtube-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-youtube-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-youtube-shade) !important;
+  --ion-color-tint:var(--ion-color-youtube-tint) !important; 
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,3 +1,22 @@
+// body {
+//   cursor: url('http://ionicframework.com/img/finger.png'), auto;
+// }  
+// p {
+//   text-align: center;
+//   margin-bottom: 40px !important;
+// }
+// .spinner svg {
+//   width: 19% !important;
+//   height: 85px !important;
+// }
+.spinners{
+    text-align: center;
+    margin-bottom: 40px !important;
+  
+  }
+  ion-spinner  {
+    transform: scale(3);
+    }
 input[type="search"] {
 	width: 45px;
 	background: #3dc2ff url('https://antocas.com/demos/search-css3/search-icon.png') no-repeat 9px center;
@@ -20,14 +39,23 @@ input[type="search"] {
 
 .icon1{
     display: block;
-    width: 30%;
-    height: 40%;
+    width: 40%;
+    height: 60%;
+    margin:10px auto;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
    
 }
 .img{
  
 width: 80px;
 height: 80px;
+}
+.text1{
+  padding-left: 15px;
+  margin-top: 3px;
+  font-size: small;
 }
 
 .card {
@@ -36,7 +64,10 @@ height: 80px;
   
         
   }
-  
+  div{
+    width: 100%;
+   
+  }
 .boton {
   margin-left: 0px;
   text-transform: none;
@@ -45,14 +76,14 @@ height: 80px;
         
   }
     
-.tool {
-  background-color: rgb(225, 226, 227);
-  background-color: rgb(245, 246, 247);
-  text-shadow: 1px 1px #f8f9fa;;
-  
-        
-  }
-  .text{
+  .tool {
+    background-color: rgb(182, 50, 27);
+    background-color: rgb(173, 80, 80);
+    text-shadow: 1px 1px #f8f9fa;
+    
+}
+
+.text{
 
     font-weight: bold;
     text-transform: capitalize;
@@ -60,20 +91,14 @@ height: 80px;
     margin-top: 0px;
     margin-left: 20px;
     margin-bottom: 6px;
-    
-	
-  }
-  .text1{
- 
+    display: table-cell;
+    padding-left: 10px;
+  
    
-    text-transform: capitalize;
-    text-transform: none;
-    margin-top: 0px;
-    margin-left: 20px;
-    margin-bottom: 6px;
-    
-	
   }
+  
+
+
   .preci{
  
     font-size: small;

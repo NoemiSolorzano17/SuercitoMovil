@@ -19,4 +19,16 @@ export class ProductosService {
                 });
     });
   }
+  mostrarProductoId(idPro:string){
+    const registro=server+"/v0/ProductosPorid?id="+idPro;
+         return new Promise((resolve, reject) => {
+           this.http.get(registro,
+           {headers:new HttpHeaders().set('Content-Type','application/json')})
+                     .subscribe(res=>{
+                       resolve(res);
+                     },(err)=>{
+                       reject(err);
+                     });
+         });
+  }
 }

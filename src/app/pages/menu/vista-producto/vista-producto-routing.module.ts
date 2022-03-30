@@ -1,27 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { VistaProductoPage } from './vista-producto.page';
-
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'product',
-      
+   redirectTo:'product',
   },
+
   {
     path: '',
     component: VistaProductoPage,
-    children: [
-      {
-        path: 'product',
-        loadChildren: '../producto/producto.module#ProductoPageModule',
-       
-      }
-    ]
+   children:[
+    {
+      path: 'product',
+      loadChildren: () => import('../producto/producto.module').then( m => m.ProductoPageModule)
+    },
+    {
+      path: 'promociones',
+      loadChildren: () => import('../promocion/promocion.module').then( m => m.PromocionPageModule)
+    }
+   ]
+   
   }
 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

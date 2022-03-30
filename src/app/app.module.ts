@@ -13,6 +13,7 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RutaService } from './Servicios/Rutas/ruta.service';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { PipesModule } from './pipes/pipes.module';
 
 
 
@@ -32,7 +33,8 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ComponentsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   
    
   ],
